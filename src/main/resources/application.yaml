@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update # cree la table automatiquement
+      show-sql: true
+  batch:
+    initialize-schema: always # cree les tables spring batch au lancement de l'application
+    job:
+      enabled: false # sans ca on essaie de lancer un job au lancement de l'application....
+
+logging:
+  level:
+    org.springframework.batch.core: DEBUG
+
+
+
+
+
